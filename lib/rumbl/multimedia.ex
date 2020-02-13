@@ -54,7 +54,7 @@ defmodule Rumbl.Multimedia do
   def create_video(%Accounts.User{} = user, attrs \\ %{}) do
     %Video{}
     |> Video.changeset(attrs)
-    |> Ecto.changeset.put_assoc(:user, user)
+    |> Ecto.Changeset.put_assoc(:user, user)
     |> Repo.insert()
   end
 
