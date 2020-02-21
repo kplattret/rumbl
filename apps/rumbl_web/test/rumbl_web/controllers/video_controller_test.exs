@@ -59,7 +59,7 @@ defmodule RumblWeb.VideoControllerTest do
       other_video = video_fixture(user_fixture(username: "other"), title: "another video")
       conn = get conn, Routes.video_path(conn, :index)
       response = html_response(conn, 200)
-      assert response =~ ~r/Listing Videos/
+      assert response =~ "<th>Title</th>"
       assert response =~ user_video.title
       refute response =~ other_video.title
     end
